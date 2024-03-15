@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:55:01 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 18:03:35 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:52:44 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	check_map(char *file_name, t_game *game)
 		print_error("Error\nFile could not be opened.", NULL, 0);
 	game->map = ft_calloc(1, sizeof(t_map));
 	if (!game->map)
-		print_error("Error\nCould not allocate memory.", NULL, 0);
+		print_error("Error\nCould not allocate memory for the map.", NULL, 0);
 	lines = 0;
 	line = get_next_line(fd);
 	game->map->cols = ft_strlen(line);
