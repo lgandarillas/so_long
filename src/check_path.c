@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:18:57 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/14 12:51:59 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:04:28 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	create_track_map(t_game *game)
 
 	game->track_map = ft_calloc(1, sizeof(t_track_map));
 	if (!game->track_map)
-		print_error("Error\nCould not allocate memory.\n\n", game, 1);
+		print_error("Error\nCould not allocate memory.", game, 1);
 	game->track_map->grid = ft_calloc(1, game->map->lines * sizeof(int *));
 	if (!game->track_map->grid)
-		print_error("Error\nCould not allocate memory.\n\n", game, 1);
+		print_error("Error\nCould not allocate memory.", game, 1);
 	game->track_map->n_collectables = game->map->n_collectables;
 	game->track_map->n_exit = game->map->n_exit;
 	i = 0;
@@ -46,7 +46,7 @@ void	create_track_map(t_game *game)
 		if (!game->track_map->grid[i])
 		{
 			free_track_map(game, i);
-			print_error("Error\nCould not allocate memory.\n\n", game, 1);
+			print_error("Error\nCould not allocate memory.", game, 1);
 		}
 		i++;
 	}
@@ -85,7 +85,7 @@ void	check_map_path(t_game *game)
 				explore_track_map(game, x, y);
 				if (game->track_map->n_collectables != 0 || \
 						game->track_map->n_exit != 0)
-					print_error("Error\nNo valid Path\n\n", game, 1);
+					print_error("Error\nNo valid Path", game, 1);
 			}
 			x++;
 		}

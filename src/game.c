@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:29:23 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/14 12:52:50 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:05:13 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	load_images(t_game *game)
 
 	game->images = ft_calloc(1, sizeof(t_images));
 	if (!game->images)
-		print_error("Error\nCould not allocate memory.\n\n", game, 1);
+		print_error("Error\nCould not allocate memory.", game, 1);
 	game->images->background = \
 		mlx_xpm_file_to_image(game->mlx, "img/floor.xpm", &width, &height);
 	game->images->player_right = \
@@ -38,7 +38,7 @@ void	load_images(t_game *game)
 	if (game->images->background == 0 || game->images->player_right == 0 || \
 		game->images->wall == 0 || game->images->exit == 0 || \
 			game->images->collectable == 0)
-		print_error("Error\nFailed to load .xpm files.\n\n", game, 1);
+		print_error("Error\nFailed to load .xpm files.", game, 1);
 }
 
 void	draw_sprites(t_game *game)
@@ -96,7 +96,7 @@ void	start_game(t_game *game)
 
 	game->mlx = mlx_init();
 	if (!game->mlx)
-		print_error("Error\nMLX failed to launch.\n\n", game, 1);
+		print_error("Error\nMLX failed to launch.", game, 1);
 	game->mlx_init = 1;
 	load_images(game);
 	game->images_created = 1;
@@ -104,7 +104,7 @@ void	start_game(t_game *game)
 	height = TILE_SIZE * (game->map->lines);
 	game->win = mlx_new_window(game->mlx, width, height, "lgandari's Pacman");
 	if (!game->win)
-		print_error("Error\nWindow failed to launch.\n\n", game, 1);
+		print_error("Error\nWindow failed to launch.", game, 1);
 	game->win_init = 1;
 	game->n_collectables = 0;
 	draw_background(game);

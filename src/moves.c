@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:30:26 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/14 12:53:40 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:08:56 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ void	move(t_game *game, int shift_x, int shift_y)
 		game->num_moves++;
 		ft_printf("Number of moves = %d\n", game->num_moves);
 		if (game->n_collectables == game->map->n_collectables)
-			game_error(game, "GAME OVER!\n\n");
+			game_error(game, "GAME OVER!");
 	}
 }

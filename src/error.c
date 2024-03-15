@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:29:08 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 16:51:34 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:16:44 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	close_window(t_game *game)
 {
-	game_error(game, "MLX Window Closed\n\n");
+	game_error(game, "MLX Window Closed");
 	return (0);
 }
 
 void	print_error(char *error_msg, t_game *game, int clean_game)
 {
-	perror(error_msg);
+	ft_printf(error_msg);
 	if (clean_game && game)
-		game_error(game, "Test");
+		game_error(game, "");
 	exit(EXIT_FAILURE);
 }
 
@@ -67,6 +67,6 @@ void	map_error(char *message, t_game *game, int i_line, int fd)
 	}
 	free(game->map->grid);
 	free(game->map);
-	perror(message);
+	ft_printf(message);
 	exit(EXIT_FAILURE);
 }

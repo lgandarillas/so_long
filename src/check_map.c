@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:55:01 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 11:25:49 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:04:01 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_valid_symbols(t_game *game)
 			if (symbol != '0' && symbol != '1' && symbol != 'E' && \
 				symbol != 'C' && symbol != 'P' && symbol != '\n' && \
 					symbol != '\0')
-				print_error("Error\nInvalid symbol.\n\n", game, 1);
+				print_error("Error\nInvalid symbol.", game, 1);
 			j++;
 		}
 		i++;
@@ -44,7 +44,7 @@ void	check_walls(t_game *game)
 	{
 		if (game->map->grid[0][i] != '1' || \
 			game->map->grid[game->map->lines - 1][i] != '1')
-			print_error("Error\nIncorrect map walls.\n\n", game, 1);
+			print_error("Error\nIncorrect map walls.", game, 1);
 		i++;
 	}
 	i = 0;
@@ -52,7 +52,7 @@ void	check_walls(t_game *game)
 	{
 		if (game->map->grid[i][0] != '1' || \
 			game->map->grid[i][game->map->cols - 2] != '1')
-			print_error("Error\nIncorrect map walls.\n\n", game, 1);
+			print_error("Error\nIncorrect map walls.", game, 1);
 		i++;
 	}
 }
@@ -83,7 +83,7 @@ void	check_num_symbols(t_game *game)
 	}
 	if (game->map->n_collectables < 1 || game->map->n_player != 1 \
 			|| game->map->n_exit != 1)
-		print_error("Error\nMap Error!.\n\n", game, 1);
+		print_error("Error\nMap Error!.", game, 1);
 }
 
 void	check_map_symbols(t_game *game)
@@ -104,10 +104,10 @@ void	map_checker(char *file_name, t_game *game)
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-		print_error("Error\nFile could not be opened.\n\n", NULL, 0);
+		print_error("Error\nFile could not be opened.", NULL, 0);
 	game->map = ft_calloc(1, sizeof(t_map));
 	if (!game->map)
-		print_error("Error\nCould not allocate memory.\n\n", NULL, 0);
+		print_error("Error\nCould not allocate memory.", NULL, 0);
 	lines = 0;
 	line = get_next_line(fd);
 	game->map->cols = ft_strlen(line);

@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 11:37:30 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 11:51:11 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:09:16 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_map_size(int lines, int cols, t_game *game)
 {
 	if (lines > MAX_LINES || cols > MAX_COLS)
-		print_error("Error\nMap too big.\n\n", game, 0);
+		print_error("Error\nMap too big.", game, 0);
 }
 
 void	save_coordinates(t_game *game)
@@ -49,7 +49,7 @@ void	save_line(t_game *game, char *line, int i_line, int fd)
 {
 	game->map->grid[i_line] = ft_calloc(game->map->cols + 1, sizeof(char));
 	if (!game->map->grid[i_line])
-		return (map_error("Error\nCould not allocate memory.\n\n", \
+		return (map_error("Error\nCould not allocate memory.", \
 			game, i_line, fd), free(line));
 	else
 		ft_strcpy(game->map->grid[i_line], line);
@@ -70,7 +70,7 @@ int	check_line_size(t_game *game, char *line, int i_line, int fd)
 		return (1);
 	else
 	{
-		map_error("Error\nMap: Wrong line size.\n\n", game, i_line, fd);
+		map_error("Error\nMap: Wrong line size.", game, i_line, fd);
 		return (0);
 	}
 }
@@ -84,14 +84,14 @@ void	save_map(t_game *game, char *file_name)
 	fd = open(file_name, O_RDONLY);
 	game->map->grid = ft_calloc(game->map->lines, sizeof(char *));
 	if (!game->map->grid)
-		print_error("Error\nCould not allocate memory.\n\n", game, 1);
+		print_error("Error\nCould not allocate memory.", game, 1);
 	i_line = 0;
 	while (i_line < game->map->lines)
 	{
 		line = get_next_line(fd);
 		if (!line)
 		{
-			map_error("Error\nCould not allocate memory.\n\n", \
+			map_error("Error\nCould not allocate memory.", \
 				game, i_line, fd);
 			free(line);
 			return ;

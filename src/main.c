@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:29:43 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/14 12:53:13 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:08:39 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_key_pressed(int key, t_game *game)
 	if (key == KEY_D || key == ARROW_RIGHT)
 		move(game, 1, 0);
 	if (key == KEY_ESC)
-		game_error(game, "Window Closed\n\n");
+		game_error(game, "Window Closed.");
 	return (0);
 }
 
@@ -51,12 +51,12 @@ int	main(int argc, char **argv)
 	t_game		*game;
 
 	if (argc != 2)
-		print_error("Error\nWrong arguments\n\n", NULL, 0);
+		print_error("Error\nWrong arguments.", NULL, 0);
 	if (check_extension(argv[1], ".ber") < 0)
-		print_error("Error\nFile is not '.ber'\n\n", NULL, 0);
+		print_error("Error\nFile is not '.ber'.", NULL, 0);
 	game = ft_calloc(1, sizeof(t_game));
 	if (!game)
-		print_error("Error\nCould not allocate memory.\n\n", NULL, 0);
+		print_error("Error\nCould not allocate memory.", NULL, 0);
 	map_checker(argv[1], game);
 	start_game(game);
 	mlx_key_hook(game->win, check_key_pressed, game);
