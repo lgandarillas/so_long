@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 15:52:22 by lgandari          #+#    #+#              #
-#    Updated: 2024/03/15 15:52:27 by lgandari         ###   ########.fr        #
+#    Updated: 2024/03/15 17:56:07 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ C_FLAGS		= -Wall -Wextra -Werror
 MLX_FLAGS	= -framework OpenGL -framework AppKit
 INCS		= -I$(INC_DIR) -I.
 
-TOTAL_FILES		:= $(words $(SRC))
-CURRENT_FILES	:= 0
+TOTAL_FILES		= $(words $(SRC))
+CURRENT_FILES	= 0
 
 define progress_bar
     @$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE) + 1))))
@@ -63,7 +63,7 @@ $(LIBFT):
 
 $(MLX):
 	@echo "$(GREEN)Compiling MLX...$(NC)"
-	@$(MAKE) -C $(MLX_PATH) > /dev/null 2>&1
+	@$(MAKE) -C $(MLX_PATH) &> /dev/null
 
 clean:
 	@rm -rf $(OBJ_DIR)
