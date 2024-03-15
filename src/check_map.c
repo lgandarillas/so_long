@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:55:01 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 17:04:01 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:03:35 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	check_map_symbols(t_game *game)
 	check_map_path(game);
 }
 
-void	map_checker(char *file_name, t_game *game)
+void	check_map(char *file_name, t_game *game)
 {
 	int		fd;
 	int		lines;

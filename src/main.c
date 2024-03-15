@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:29:43 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 17:08:39 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:02:29 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	game = ft_calloc(1, sizeof(t_game));
 	if (!game)
 		print_error("Error\nCould not allocate memory.", NULL, 0);
-	map_checker(argv[1], game);
+	check_map(argv[1], game);
 	start_game(game);
 	mlx_key_hook(game->win, check_key_pressed, game);
 	mlx_hook(game->win, 17, 0, close_window, game);

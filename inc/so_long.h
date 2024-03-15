@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:28:16 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 17:38:36 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:02:50 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int		check_key_pressed(int key, t_game *game);
 void	save_coordinates(t_game *game);
 
 void	save_map(t_game *game, char *file_name);
-void	map_checker(char *filename, t_game *game);
+void	check_map(char *filename, t_game *game);
 void	check_map_path(t_game *game);
 void	check_map_symbols(t_game *game);
 
