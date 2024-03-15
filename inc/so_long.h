@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:28:16 by lgandari          #+#    #+#             */
-/*   Updated: 2024/03/15 11:28:08 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:38:36 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define TILE_SIZE	32
 
 # define MAX_LINES	30
-# define MAX_COLS		80
+# define MAX_COLS	80
 
 typedef struct s_images
 {
