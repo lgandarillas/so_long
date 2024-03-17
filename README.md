@@ -27,6 +27,8 @@ The game consists of a character collecting objects on a map and searching for t
 
 Note: While this project is primarily designed to run on macOS, it can potentially be adapted to run on Linux systems as well. Additional steps may be required for Linux compatibility.
 
+![](img/so_long.png)
+
 ## Project Structure
 My project is structured as follows:
 
