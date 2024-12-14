@@ -1,4 +1,4 @@
-# so_long
+# [so_long | 42 School - Rank 02]
 
 ## Introduction
 
